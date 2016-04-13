@@ -1,0 +1,24 @@
+{
+  "name": "vue-harness",
+  "version": "1.0.0",
+  "description": "Harness for vue components",
+  "main": "built/src/harness.js",
+  "typings": "built/src/harness.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/weichx/vue-harness.git"
+  },
+  "keywords": [
+    "vue",
+    "harness"
+  ],
+  "author": "Matt Weichselbaum",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/weichx/vue-harness/issues"
+  },
+  "homepage": "https://github.com/weichx/vue-harness",
+  "devDependencies": {
+    "typescript": "^1.8.10"
+  }
+}
