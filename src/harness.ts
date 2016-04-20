@@ -1,4 +1,4 @@
-// import Vue = require('vue');
+import Vue = require('vue');
 import VueStatic = vuejs.VueStatic;
 import ComponentOption = vuejs.ComponentOption;
 
@@ -16,7 +16,7 @@ function camelToDash(input : string) : string {
         return "-" + $1.toLowerCase();
     });
 }
-
+//run through all the elements in the `data` hash and convert them to prop form (:attr-name="attrName")
 function setPropAttributes(attrs : any) : string {
     if (!attrs) return '';
     var props  = attrs;
@@ -33,14 +33,20 @@ function setPropAttributes(attrs : any) : string {
 }
 
 export default class Harness {
-
+    //mounting point id
     public static mountElementId : string = 'harness-mount-point';
+    //registry of harnesses
     private static harnesses : {[str : string] : Harness } = {};
+    //which harness vue instance is active
     private static activeInstance : any;
 
+    //config containing non-vue data
     private config : any;
+    //the vue generated class from our options hash
     private componentClass : any;
+    //if this harness has a parent, this will point to it
     private parentHarness : Harness;
+    //general vue options
     private options : IHarnessOptions;
 
     constructor(name : string, options : IHarnessOptions) {

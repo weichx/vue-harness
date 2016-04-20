@@ -1,8 +1,10 @@
+var Vue = require('vue');
 function camelToDash(input) {
     return input.replace(/([A-Z])/g, function ($1) {
         return "-" + $1.toLowerCase();
     });
 }
+//run through all the elements in the `data` hash and convert them to prop form (:attr-name="attrName")
 function setPropAttributes(attrs) {
     if (!attrs)
         return '';
@@ -143,7 +145,9 @@ var Harness = (function () {
     Harness.NotFound = function (name) {
         return "Unable to find harness with name '" + name;
     };
+    //mounting point id
     Harness.mountElementId = 'harness-mount-point';
+    //registry of harnesses
     Harness.harnesses = {};
     return Harness;
 })();
